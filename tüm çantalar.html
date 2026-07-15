@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NPURPLE- Tüm Çantalar</title>
-    <!-- Cinzel fontu eklendi -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-krem: #FBE4D8;
-            --koyu-mor: #190019;
             --patlican: #2B124C;
             --leylak: #854F6C;
-            /* Font tanımı Cinzel olarak güncellendi */
             --yazi-fontu: 'Cinzel', serif;
         }
 
@@ -20,171 +17,116 @@
             background-color: var(--bg-krem);
             color: var(--patlican);
             margin: 0;
-            padding: 40px;
+            padding: 20px;
             font-family: var(--yazi-fontu);
         }
 
-        h1, h2, h3, p, a {
-            font-family: var(--yazi-fontu);
-            color: var(--patlican);
-            /* Cinzel biraz daha ince durabilir, başlıkları 600 weight ile belirginleştirebiliriz */
-            font-weight: 400;
-        }
-
-        h1 { font-weight: 600; }
-
-        .header-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--koyu-mor);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 40px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--leylak); }
-
-        .category-title {
-            margin-top: 50px;
-            text-align: center;
-            letter-spacing: 2px; /* Cinzel ile harf aralığını biraz açmak çok şık durur */
-        }
+        .category-title { margin-top: 50px; text-align: center; letter-spacing: 2px; }
 
         .ayrac {
-            border: 0;
-            height: 2px;
+            border: 0; height: 2px;
             background-image: linear-gradient(to right, transparent, var(--leylak), transparent);
-            margin: 20px auto 40px auto;
-            width: 50%;
+            margin: 20px auto 40px auto; width: 50%;
         }
 
+        /* GRID YAPISI */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
+            grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+            gap: 20px;
             max-width: 800px;
             margin: 0 auto;
         }
 
         .product-item {
             text-align: center;
-            padding: 15px;
+            padding: 10px;
+        }
+
+        /* GÖRSEL KAPSAYICISI (DÜZENLEME BURADA) */
+        .product-image-container {
+            width: 100%;
+            height: 250px; /* Sabit yükseklik, tüm kutular eşit olacak */
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 10px;
         }
 
         .product-image-container img {
             width: 100%;
-            max-width: 250px;
+            height: 100%;
+            object-fit: cover; /* Görseli bozmadan kutuyu tam doldurur */
             transition: transform 0.5s ease;
             display: block;
-            margin: 0 auto;
-            border-radius: 10px;
         }
 
-        .product-image-container img:hover {
-            transform: scale(1.05);
-        }
+        .product-image-container img:hover { transform: scale(1.05); }
 
-        .btn-view-all {
-            display: block;
-            text-align: center;
-            margin: 30px auto 50px auto;
-            padding: 12px 25px;
-            background-color: var(--patlican);
-            color: white !important;
-            text-decoration: none;
-            width: fit-content;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn-view-all:hover {
-            background-color: var(--leylak);
+        /* MOBİL UYUM (Responsive) */
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* Mobilde tek sütun */
+            }
+            .product-image-container {
+                height: 300px; /* Mobilde biraz daha büyük görünsün */
+            }
         }
     </style>
 </head>
 <body>
 
-     <section id="hakkimizda" style="padding: 40px 20px; text-align: center; background-color: #FBE4D8;">
-    <div style="max-width: 800px; margin: 0 auto; color: #2B124C;">
-        <h2 style="font-size: 2rem; margin-bottom: 20px;">Npurple İmzalı Ürünler Burada</h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
-        </p> Buradaki her şey el emeğidir.
-    </div>
-</section>
-
-    <header class="header-section">
-        <img src="https://resmim.net/cdn/2026/07/15/C2OS4n.png" alt="Logo" style="width: 150px;">
-        <div class="header-right">
-            <nav class="nav-links">
-                <a href="iletişim.html">BİZE ULAŞIN</a>
-            </nav>
-    </header>
-
     <h2 class="category-title">ÇANTALAR</h2>
-<hr class="ayrac">
+    <hr class="ayrac">
 
-<main class="product-grid"> 
-    
-    <div class="product-item">
-        <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C24QXq.png" alt="Çanta"></div>
-            <h3>MERCAN RAFYA İP CANVAS ÇANTA</h3>
-            <p>450 TL</p>
-        </a>
-    </div>
+    <main class="product-grid"> 
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C24QXq.png" alt="Çanta"></div>
+                <h3>MERCAN RAFYA İP CANVAS ÇANTA</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
 
-    <div class="product-item">
-        <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C26Puq.png" alt="Çanta"></div>
-            <h3>LACİVERT KAĞIT İP ÇANTA</h3>
-            <p>5900 TL</p>
-        </a>
-    </div>
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C26Puq.png" alt="Çanta"></div>
+                <h3>LACİVERT KAĞIT İP ÇANTA</h3>
+                <p>5900 TL</p>
+            </a>
+        </div>
 
-    <div class="product-item">
-        <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C2QUqR.png" alt="Çanta"></div>
-            <h3>Mavi Rafya İp Canvas Çanta</h3>
-            <p>450 TL</p>
-        </a>
-    </div>
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C2QUqR.png" alt="Çanta"></div>
+                <h3>Mavi Rafya İp Canvas Çanta</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
 
-    <div class="product-item">
-        <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/Cv8I38.png" alt="Çanta"></div>
-            <h3>Siyah Kadife İpli Burslu Çanta</h3>
-            <p>450 TL</p>
-        </a>
-    </div>
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/Cv8I38.png" alt="Çanta"></div>
+                <h3>Siyah Kadife İpli Burslu Çanta</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
 
-    <div class="product-item">
-        <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/Cv8J72.png" alt="Çanta"></div>
-            <h3>Mercan Rafya İp Canvas Çanta</h3>
-            <p>450 TL</p>
-        </a>
-    </div>
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/Cv8J72.png" alt="Çanta"></div>
+                <h3>Mercan Rafya İp Canvas Çanta</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
 
-    <div class="product-item">
-        <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/Cv8Lpx.png" alt="Çanta"></div>
-            <h3>Beyaz Pamuk Makrome Çanta&Telefonluk</h3>
-            <p>450 TL</p>
-        </a>
-    </div>
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/Cv8Lpx.png" alt="Çanta"></div>
+                <h3>Beyaz Pamuk Makrome Çanta&Telefonluk</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
+    </main>
 
-</main>
+</body>
+</html>
