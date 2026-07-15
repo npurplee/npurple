@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NPURPLE- Tüm Kanaviçe Tablolar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-krem: #FBE4D8;
+            --patlican: #2B124C;
+            --leylak: #854F6C;
+            --yazi-fontu: 'Cinzel', serif;
+        }
+
+        body {
+            background-color: var(--bg-krem);
+            color: var(--patlican);
+            margin: 0;
+            padding: 20px;
+            font-family: var(--yazi-fontu);
+        }
+
+        .category-title { margin-top: 50px; text-align: center; letter-spacing: 2px; }
+
+        .ayrac {
+            border: 0; height: 2px;
+            background-image: linear-gradient(to right, transparent, var(--leylak), transparent);
+            margin: 20px auto 40px auto; width: 50%;
+        }
+
+        /* GRID YAPISI */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 sütun */
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .product-item {
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* GÖRSEL KAPSAYICISI (DÜZENLEME BURADA) */
+        .product-image-container {
+            width: 100%;
+            height: 250px; /* Sabit yükseklik, tüm kutular eşit olacak */
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .product-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Görseli bozmadan kutuyu tam doldurur */
+            transition: transform 0.5s ease;
+            display: block;
+        }
+
+        .product-image-container img:hover { transform: scale(1.05); }
+
+        /* MOBİL UYUM (Responsive) */
+        @media (max-width: 600px) {
+            .product-grid {
+                grid-template-columns: 1fr; /* Mobilde tek sütun */
+            }
+            .product-image-container {
+                height: 300px; /* Mobilde biraz daha büyük görünsün */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h2 class="category-title">KANAVİÇE TABLOLAR</h2>
+    <hr class="ayrac">
+
+    <main  class="product-grid"> 
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQ41M.png" alt="TABLO"></div>
+                <h3>KANAVİÇE MAŞALLAH TABLO</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQRch.png" alt="TABLO"></div>
+                <h3>KANAVİÇE KUFİ BESMELE TABLO</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
+    
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQxm3.png" alt="TABLO"></div>
+                <h3>KANAVİÇE ALLAH LAFZI TABLO</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQ7LQ.png" alt="TABLO"></div>
+                <h3>KANAVİÇE GEMİ BEBEK PANOSU</h3>
+                <p>5900 TL</p>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQiwK.png" alt="TABLO"></div>
+                <h3>KİŞİYE ÖZEL KANAVİÇE PANO</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
+
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none; color: inherit;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQ57W.png"  alt="TABLO"></div>
+                <h3>KANAVİÇE YA HAFIZ TABLO</h3>
+                <p>450 TL</p>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>
