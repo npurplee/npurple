@@ -106,50 +106,46 @@
             </div>
         </main>
         
-    </div>
-     <section id="hakkimizda" style="padding: 60px; text-align: center; background-color: #FBE4D8;">
-
+    <section id="hakkimizda" style="padding: 40px 20px; text-align: center; background-color: #FBE4D8;">
     <div style="max-width: 800px; margin: 0 auto; color: #2B124C;">
-
-        <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Npurple İmzalı Ürünler</h2>
-
-        <p style="font-size: 1.2rem; line-height: 1.8;">
-
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Npurple İmzalı Ürünler Burada</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+             Kargo
+        </p>
     </div>
-
 </section>
 
-
-
-<section id="iletisim" style="padding: 60px; background-color: #190019; color: #FBE4D8; text-align: center;">
-
-    <h2 style="font-family: 'Sergio', serif; font-size: 2.5rem; margin-bottom: 20px;">Bizimle İletişime Geçin</h2>
-
-    <p style="max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem; opacity: 0.9;">
-
-       Siparişiniz de ekstra istekler veya merak ettikleriniz için bize buradan ulaşabilirsiniz.
-
+<section id="iletisim" style="padding: 40px 20px; background-color: #190019; color: #FBE4D8; text-align: center;">
+    <h2 style="font-size: 2rem; margin-bottom: 20px;">Bizimle İletişime Geçin</h2>
+    <p style="max-width: 600px; margin: 0 auto 30px auto; font-size: 1rem; opacity: 0.9;">
+        Sipariş detayları veya merak ettikleriniz için bize buradan ulaşabilirsiniz.
     </p>
-
-    <div style="display: flex; flex-direction: column; gap: 15px; font-size: 1.2rem;">
-
+    
+    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 1.1rem; margin-bottom: 30px;">
         <p>📧 nurgulkaraaslansulu@gmail.com</p>
-
     </div>
 
-    <!-- İletişim Formu Alanı -->
-
-    <form style="margin-top: 40px; display: flex; flex-direction: column; align-items: center; gap: 15px;">
-
-        <input type="text" placeholder="İsminiz" style="padding: 10px; width: 300px; background: #2B124C; border: 1px solid #854F6C; color: #FBE4D8;">
-
-        <textarea placeholder="Mesajınız" style="padding: 10px; width: 300px; height: 100px; background: #2B124C; border: 1px solid #854F6C; color: #FBE4D8;"></textarea>
-
-        <button type="submit" style="padding: 10px 30px; background: #854F6C; color: #FBE4D8; border: none; cursor: pointer;">Gönder</button>
-
+    <form style="display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%;">
+        <input type="text" placeholder="İsminiz" style="padding: 12px; width: 90%; max-width: 400px; background: #2B124C; border: 1px solid #854F6C; color: #FBE4D8;">
+        <textarea placeholder="Mesajınız" style="padding: 12px; width: 90%; max-width: 400px; height: 120px; background: #2B124C; border: 1px solid #854F6C; color: #FBE4D8;"></textarea>
+        <button type="submit" style="padding: 12px 40px; background: #854F6C; color: #FBE4D8; border: none; cursor: pointer; font-size: 1rem;">Gönder</button>
     </form>
-
 </section>
 
-    </body>
-</html>
+<style>
+/* Mobil Düzenlemeler */
+@media (max-width: 768px) {
+    #hakkimizda, #iletisim {
+        padding: 30px 15px !important;
+    }
+    
+    h2 {
+        font-size: 1.8rem !important;
+    }
+
+    /* Form elemanlarının mobilde daha iyi görünmesi için */
+    input, textarea {
+        font-size: 16px !important; /* iPhone'larda form alanına tıklayınca yakınlaştırmayı engeller */
+    }
+}
+</style>
