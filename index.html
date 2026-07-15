@@ -10,6 +10,7 @@
             --koyu-mor: #190019;
             --patlican: #2B124C;
             --leylak: #854F6C;
+            --hafif-mor: #522B5B;
         }
 
         body {
@@ -17,6 +18,7 @@
             color: var(--patlican);
             margin: 0;
             padding: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         .header-section {
@@ -28,126 +30,96 @@
             margin-bottom: 40px;
         }
 
-        .layout-wrapper {
-            display: flex;
-            gap: 50px;
-        }
-
-        .duyuru-panosu {
-            width: 300px;
-            height: 300px;
-            border: 2px dashed var(--koyu-mor);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 20px;
-            flex-shrink: 0;
-        }
-
-        /* Ürünleri yan yana getiren ızgara yapısı */
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* İki ürün yan yana */
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
-            flex-grow: 1;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .product-item {
             text-align: center;
-            overflow: hidden;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 15px;
+            transition: 0.3s;
         }
 
-        .product-image-container {
-            width: 100%;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
+        .product-item:hover { background-color: rgba(255,255,255,0.3); }
 
         .product-image-container img {
             width: 100%;
             max-width: 250px;
-            transition: transform 0.5s ease;
-            display: block;
-            margin: 0 auto;
+            border-radius: 10px;
         }
 
-        .product-image-container img:hover {
-            transform: scale(1.05);
+        /* Detay Paneli Stili */
+        #details-overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+            width: 300px;
+            z-index: 100;
+        }
+
+        .close-btn {
+            background: var(--leylak);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
         }
     </style>
 </head>
 <body>
 
     <header class="header-section">
-        <img src="https://resmim.net/cdn/2026/07/15/C2OS4n.png" alt="Apurple Logo" style="width: 150px;">
+        <img src="https://resmim.net/cdn/2026/07/15/C2OS4n.png" alt="Logo" style="width: 150px;">
         <h1>NPURPLE</h1>
     </header>
 
-<main class="product-grid">
-
-    <a href="ürün detay.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-item">
-            <div class="product-image-container">
-                <img src="https://resmim.net/cdn/2026/07/15/C24QXq.png" alt="Çanta">
-            </div>
+    <main class="product-grid">
+        <div class="product-item" onclick="openDetails('Mercan Rafya İp Canvas Çanta', '450 TL', 'https://resmim.net/cdn/2026/07/15/C24QXq.png')">
+            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C24QXq.png" alt="Çanta"></div>
             <h3>Mercan Rafya İp Canvas Çanta</h3>
-            <p class="price">450 TL</p>
+            <p>450 TL</p>
         </div>
-    </a>
 
-    <a href="ürün detay.html" style="text-decoration: none; color: inherit; display: block;">
-        <div class="product-item">
-            <div class="product-image-container">
-                <img src="https://resmim.net/cdn/2026/07/15/C26Puq.png" alt="Çanta">
-            </div>
+        <div class="product-item" onclick="openDetails('Lacivert Kağıt İp Çanta', '5900 TL', 'https://resmim.net/cdn/2026/07/15/C26Puq.png')">
+            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C26Puq.png" alt="Çanta"></div>
             <h3>Lacivert Kağıt İp Çanta</h3>
-            <p class="price">5900 TL</p>
+            <p>5900 TL</p>
         </div>
-    </a>
-        
-   <section id="hakkimizda" style="padding: 40px 20px; text-align: center; background-color: #FBE4D8;">
-    <div style="max-width: 800px; margin: 0 auto; color: #2B124C;">
-        <h2 style="font-size: 2rem; margin-bottom: 20px;">Atölyemizin Hikayesi</h2>
-        <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
-            Her şey, bir ipliğin düğümünde gizli olan o eşsiz huzuru keşfetmekle başladı. 
-            Annenin Atölyesi, modern yaşamın telaşında unutulan o yavaş ve özenli üretme tutkusunun bir yansımasıdır...
-        </p>
-    </div>
-</section>
+    </main>
 
-<section id="iletisim" style="padding: 40px 20px; background-color: #190019; color: #FBE4D8; text-align: center;">
-    <h2 style="font-size: 2rem; margin-bottom: 20px;">Bizimle İletişime Geçin</h2>
-    <p style="max-width: 600px; margin: 0 auto 30px auto; font-size: 1rem; opacity: 0.9;">
-        Özel tasarımlar veya merak ettikleriniz için bize buradan ulaşabilirsiniz.
-    </p>
-    
-    <div style="display: flex; flex-direction: column; gap: 10px; font-size: 1.1rem; margin-bottom: 30px;">
-        <p>📧 atolyem@mail.com</p>
-        <p>📸 @atolyenizinhesabi</p>
+    <div id="details-overlay">
+        <img id="d-img" src="" style="width:100px;">
+        <h2 id="d-title"></h2>
+        <p id="d-price"></p>
+        <button class="close-btn" onclick="closeDetails()">Kapat</button>
     </div>
 
-    <form style="display: flex; flex-direction: column; align-items: center; gap: 15px; width: 100%;">
-        <input type="text" placeholder="İsminiz" style="padding: 12px; width: 90%; max-width: 400px; background: #2B124C; border: 1px solid #854F6C; color: #FBE4D8;">
-        <textarea placeholder="Mesajınız" style="padding: 12px; width: 90%; max-width: 400px; height: 120px; background: #2B124C; border: 1px solid #854F6C; color: #FBE4D8;"></textarea>
-        <button type="submit" style="padding: 12px 40px; background: #854F6C; color: #FBE4D8; border: none; cursor: pointer; font-size: 1rem;">Gönder</button>
-    </form>
-</section>
+    <script>
+        function openDetails(title, price, img) {
+            document.getElementById('d-title').innerText = title;
+            document.getElementById('d-price').innerText = price;
+            document.getElementById('d-img').src = img;
+            document.getElementById('details-overlay').style.display = 'block';
+        }
 
-<style>
-/* Mobil Düzenlemeler */
-@media (max-width: 768px) {
-    #hakkimizda, #iletisim {
-        padding: 30px 15px !important;
-    }
-    
-    h2 {
-        font-size: 1.8rem !important;
-    }
-
-    /* Form elemanlarının mobilde daha iyi görünmesi için */
-    input, textarea {
-        font-size: 16px !important; /* iPhone'larda form alanına tıklayınca yakınlaştırmayı engeller */
-    }
-}
-</style>
+        function closeDetails() {
+            document.getElementById('details-overlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
