@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NPURPLE</title>
+    <!-- Cinzel fontu eklendi -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-krem: #FBE4D8;
             --koyu-mor: #190019;
             --patlican: #2B124C;
             --leylak: #854F6C;
-            --hafif-mor: #522B5B;
+            /* Font tanımı Cinzel olarak güncellendi */
+            --yazi-fontu: 'Cinzel', serif;
         }
 
         body {
@@ -18,8 +21,17 @@
             color: var(--patlican);
             margin: 0;
             padding: 40px;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: var(--yazi-fontu);
         }
+
+        h1, h2, h3, p, a {
+            font-family: var(--yazi-fontu);
+            color: var(--patlican);
+            /* Cinzel biraz daha ince durabilir, başlıkları 600 weight ile belirginleştirebiliriz */
+            font-weight: 400;
+        }
+
+        h1 { font-weight: 600; }
 
         .header-section {
             display: flex;
@@ -28,6 +40,35 @@
             border-bottom: 2px solid var(--koyu-mor);
             padding-bottom: 20px;
             margin-bottom: 40px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--leylak); }
+
+        .category-title {
+            margin-top: 50px;
+            text-align: center;
+            letter-spacing: 2px; /* Cinzel ile harf aralığını biraz açmak çok şık durur */
+        }
+
+        .ayrac {
+            border: 0;
+            height: 2px;
+            background-image: linear-gradient(to right, transparent, var(--leylak), transparent);
+            margin: 20px auto 40px auto;
+            width: 50%;
         }
 
         .product-grid {
@@ -40,86 +81,85 @@
 
         .product-item {
             text-align: center;
-            cursor: pointer;
             padding: 15px;
-            border-radius: 15px;
-            transition: 0.3s;
         }
-
-        .product-item:hover { background-color: rgba(255,255,255,0.3); }
 
         .product-image-container img {
             width: 100%;
             max-width: 250px;
+            transition: transform 0.5s ease;
+            display: block;
+            margin: 0 auto;
             border-radius: 10px;
         }
 
-        /* Detay Paneli Stili */
-        #details-overlay {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 300px;
-            z-index: 100;
+        .product-image-container img:hover {
+            transform: scale(1.05);
         }
 
-        .close-btn {
-            background: var(--leylak);
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 15px;
+        .btn-view-all {
+            display: block;
+            text-align: center;
+            margin: 30px auto 50px auto;
+            padding: 12px 25px;
+            background-color: var(--patlican);
+            color: white !important;
+            text-decoration: none;
+            width: fit-content;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-view-all:hover {
+            background-color: var(--leylak);
         }
     </style>
 </head>
 <body>
 
+     <section id="hakkimizda" style="padding: 40px 20px; text-align: center; background-color: #FBE4D8;">
+    <div style="max-width: 800px; margin: 0 auto; color: #2B124C;">
+        <h2 style="font-size: 2rem; margin-bottom: 20px;">Npurple İmzalı Ürünler Burada</h2>
+        <p style="font-size: 1.1rem; line-height: 1.6; text-align: justify;">
+        </p> Buradaki her şey el emeğidir.
+    </div>
+</section>
+
     <header class="header-section">
         <img src="https://resmim.net/cdn/2026/07/15/C2OS4n.png" alt="Logo" style="width: 150px;">
-        <h1>NPURPLE</h1>
+        <div class="header-right">
+            <nav class="nav-links">
+                <a href="iletişim.html">BİZE ULAŞIN</a>
+            </nav>
     </header>
 
-    <main class="product-grid">
-        <div class="product-item" onclick="openDetails('Mercan Rafya İp Canvas Çanta', '450 TL', 'https://resmim.net/cdn/2026/07/15/C24QXq.png')">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C24QXq.png" alt="Çanta"></div>
-            <h3>Mercan Rafya İp Canvas Çanta</h3>
-            <p>450 TL</p>
+    <h2 class="category-title">ÇANTALAR</h2>
+    <hr class="ayrac">
+    
+    <main class="product-grid"> 
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C24QXq.png" alt="Çanta"></div>
+                <h3>MERCAN RAFYA İP CANVAS ÇANTA</h3>
+                <p>450 TL</p>
+            </a>
         </div>
 
-        <div class="product-item" onclick="openDetails('Lacivert Kağıt İp Çanta', '5900 TL', 'https://resmim.net/cdn/2026/07/15/C26Puq.png')">
-            <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C26Puq.png" alt="Çanta"></div>
-            <h3>Lacivert Kağıt İp Çanta</h3>
-            <p>5900 TL</p>
+        <div class="product-item">
+            <a href="ürün detay.html" style="text-decoration: none;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/C26Puq.png" alt="Çanta"></div>
+                <h3>LACİVERT KAĞIT İP ÇANTA</h3>
+                <p>5900 TL</p>
+            </a>
         </div>
     </main>
 
-    <div id="details-overlay">
-        <img id="d-img" src="" style="width:100px;">
-        <h2 id="d-title"></h2>
-        <p id="d-price"></p>
-        <button class="close-btn" onclick="closeDetails()">Kapat</button>
-    </div>
+    <a href="tum-cantalar.html" class="btn-view-all">TÜM ÇANTALARI GÖR</a>
 
-    <script>
-        function openDetails(title, price, img) {
-            document.getElementById('d-title').innerText = title;
-            document.getElementById('d-price').innerText = price;
-            document.getElementById('d-img').src = img;
-            document.getElementById('details-overlay').style.display = 'block';
-        }
+    <h2 class="category-title">TABLOLAR</h2>
+    <hr class="ayrac">
+    <div style="text-align: center; color: #666; font-family: 'Cinzel', serif;">Buraya tablolar gelecek...</div>
 
-        function closeDetails() {
-            document.getElementById('details-overlay').style.display = 'none';
-        }
-    </script>
 </body>
 </html>
