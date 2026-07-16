@@ -14,101 +14,35 @@
             --yazi-fontu: 'Cinzel', serif;
         }
 
-        body {
-            background-color: var(--bg-krem);
-            color: var(--patlican);
-            margin: 0;
-            padding: 40px;
-            font-family: var(--yazi-fontu);
-        }
+        body { background-color: var(--bg-krem); color: var(--patlican); margin: 0; padding: 40px; font-family: var(--yazi-fontu); }
 
-        h1, h2, h3, p, a {
-            font-family: var(--yazi-fontu);
-            color: var(--patlican);
-            font-weight: 400;
-        }
-
+        h1, h2, h3, p, a { font-family: var(--yazi-fontu); color: var(--patlican); font-weight: 400; }
         h1 { font-weight: 600; }
 
-        .header-section {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--koyu-mor);
-            padding-bottom: 20px;
-            margin-bottom: 40px;
-        }
-
-        .header-right { display: flex; align-items: center; gap: 40px; }
-
-        .nav-links a {
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
+        .header-section { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--koyu-mor); padding-bottom: 20px; margin-bottom: 40px; }
+        .nav-links a { text-decoration: none; font-weight: 600; font-size: 16px; transition: 0.3s; }
         .nav-links a:hover { color: var(--leylak); }
 
-        .category-title {
-            margin-top: 50px;
-            text-align: center;
-            letter-spacing: 2px;
-        }
+        .category-title { margin-top: 50px; text-align: center; letter-spacing: 2px; }
+        .ayrac { border: 0; height: 2px; background-image: linear-gradient(to right, transparent, var(--leylak), transparent); margin: 20px auto 40px auto; width: 50%; }
 
-        .ayrac {
-            border: 0;
-            height: 2px;
-            background-image: linear-gradient(to right, transparent, var(--leylak), transparent);
-            margin: 20px auto 40px auto;
-            width: 50%;
-        }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
+        .product-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 800px; margin: 0 auto; }
         .product-item { text-align: center; padding: 15px; }
 
-        .product-image-container img {
-            width: 100%;
-            max-width: 250px;
-            transition: transform 0.5s ease;
-            display: block;
-            margin: 0 auto;
-            border-radius: 10px;
-        }
-
+        /* GÖRSEL BOYUTLARINI SABİTLEYEN KISIM */
+        .product-image-container { width: 250px; height: 250px; margin: 0 auto; overflow: hidden; border-radius: 10px; }
+        .product-image-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
         .product-image-container img:hover { transform: scale(1.05); }
 
-        /* Butonları ortalamak için yeni CSS */
-        .btn-container {
-            display: flex;
-            justify-content: center;
-            margin: 30px auto 50px auto;
-        }
-
-        .btn-view-all {
-            padding: 12px 25px;
-            background-color: var(--patlican);
-            color: white !important;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
+        .btn-container { display: flex; justify-content: center; margin: 30px auto 50px auto; }
+        .btn-view-all { padding: 12px 25px; background-color: var(--patlican); color: white !important; text-decoration: none; border-radius: 25px; font-weight: 600; transition: 0.3s; }
         .btn-view-all:hover { background-color: var(--leylak); }
     </style>
 </head>
 <body>
 
-    <section id="hakkimizda" style="padding: 40px 20px; text-align: center; background-color: #FBE4D8;">
-        <div style="max-width: 800px; margin: 0 auto; color: #2B124C;">
+    <section id="hakkimizda" style="padding: 40px 20px; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
             <h2 style="font-size: 2rem; margin-bottom: 20px;">Npurple İmzalı Ürünler Burada</h2>
             <p style="font-size: 1.1rem; line-height: 1.6;">Buradaki her şey el emeğidir.</p>
         </div>
@@ -116,11 +50,9 @@
 
     <header class="header-section">
         <img src="https://resmim.net/cdn/2026/07/15/C2OS4n.png" alt="Logo" style="width: 150px;">
-        <div class="header-right">
-            <nav class="nav-links">
-                <a href="iletişim.html">BİZE ULAŞIN</a>
-            </nav>
-        </div>
+        <nav class="nav-links">
+            <a href="iletişim.html">BİZE ULAŞIN</a>
+        </nav>
     </header>
 
     <h2 class="category-title">ÇANTALAR</h2>
@@ -141,33 +73,46 @@
             </a>
         </div>
     </main>
-
-    <div class="btn-container">
-        <a href="tüm çantalar.html" class="btn-view-all">TÜM ÇANTALARI GÖR</a>
-    </div>
+    <div class="btn-container"><a href="tüm çantalar.html" class="btn-view-all">TÜM ÇANTALARI GÖR</a></div>
 
     <h2 class="category-title">KANAVİÇE TABLOLAR</h2>
     <hr class="ayrac">
     <main class="product-grid"> 
         <div class="product-item">
-            <a href="ürün detay 9.html" style="text-decoration: none; color: inherit;">
+            <a href="ürün detay 9.html" style="text-decoration: none;">
                 <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQ41M.png" alt="TABLO"></div>
                 <h3>KANAVİÇE MAŞALLAH TABLO</h3>
                 <p>6000 TL</p>
             </a>
         </div>
         <div class="product-item">
-            <a href="ürün detay 10.html" style="text-decoration: none; color: inherit;">
+            <a href="ürün detay 10.html" style="text-decoration: none;">
                 <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/15/CvQRch.png" alt="TABLO"></div>
                 <h3>KANAVİÇE KUFİ BESMELE TABLO</h3>
                 <p>7000 TL</p>
             </a>
         </div>
     </main>
+    <div class="btn-container"><a href="tüm tablolar.html" class="btn-view-all">TÜM KANAVİÇE TABLOLARI GÖR</a></div>
 
-    <div class="btn-container">
-        <a href="tüm tablolar.html" class="btn-view-all">TÜM KANAVİÇE TABLOLARI GÖR</a>
-    </div>
-
+    <h2 class="category-title">BATTANİYE & ŞALLAR</h2>
+    <hr class="ayrac">
+    <main class="product-grid"> 
+        <div class="product-item">
+            <a href="ürün detay 15.html" style="text-decoration: none;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/16/EMIAiT.png" alt="BATTANİYE/ŞAL"></div>
+                <h3>KIRMIZI GÜLLER BATTANİYE/ŞAL</h3>
+                <p>3700 TL</p>
+            </a>
+        </div>
+        <div class="product-item">
+            <a href="ürün detay 16.html" style="text-decoration: none;">
+                <div class="product-image-container"><img src="https://resmim.net/cdn/2026/07/16/EMPrBK.png" alt="ŞAL"></div>
+                <h3>Su Taşı Şal</h3>
+                <p>2000 TL</p>
+            </a>
+        </div>
+    </main>
 </body>
 </html>
+
